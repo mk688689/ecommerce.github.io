@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+	{% block content %}
+	<!--index page-->
+		<div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg'%});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+        	<h3 class="v">Sitannya - Time to get dress</h3>
+        	<h3 class="vr">Since - 2017</h3>
+          <div class="col-md-11 ftco-animate text-center">
+            <h1>sitannya</h1>
+            <h2><span>Wear Your Dress</span></h2>
+          </div>
+          <div class="mouse">
+			  <a href="#" class="mouse-icon">
+				  <div class="mouse-wheel"><span class="ion-ios-arrow-down"></span></div>
+			  </a>
+		  </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="goto-here"></div>
+
+
+    <section class="ftco-section ftco-product">
+    	<div class="container">
+    		<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big">Trending</h1>
+            <h2 class="mb-4">Trending</h2>
+          </div>
+        </div>
+    		<div class="row">
+    			<div class="col-md-12 ">
+    				<div class="product-slider owl-carousel ftco-animate">
+						{% for i in product %}
+
+    					<div class="item">
+		    				<div class="product">
+		    					<a href="../women" class="img-prod"><img class="img-fluid" src="{{ i.image.url }}" alt="product image">
+		    					</a>
+		    					<div class="text pt-3 px-3">
+		    						<h3><a href="../products/{{i.id}}">{{ i.name }}</a></h3>
+		    						<div class="d-flex">
+		    							<div class="pricing">
+			    							<p class="price"><span class="price-sale">Rs. {{ i.price }}</span></p>
+			    						</div>
+			    						<div class="rating">
+			    							<p class="text-right">
+			    								<span class="ion-ios-star-outline"></span>
+			    								<span class="ion-ios-star-outline"></span>
+			    								<span class="ion-ios-star-outline"></span>
+			    								<span class="ion-ios-star-outline"></span>
+			    								<span class="ion-ios-star-outline"></span>
+			    							</p>
+			    						</div>
+		    						</div>
+		    					</div>
+		    				</div>
+	    				</div>
+
+	    			{% endfor %}
+
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
+
+
+	<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({% static 'images/bg_2.jpg'%});">
+						<a href="" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+							<span class="icon-play"></span>
+						</a>
+					</div>
+					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section-bold mb-5 mt-md-5">
+	          	<div class="ml-md-0">
+		            <h2 class="mb-4">Sitannya <br>Online <br> <span>Fashion </span></h2>
+	            </div>
+	          </div>
+	          <div class="pb-md-5">
+							<p>Explore the excitement of shopping with <b>Sitannya</b>. Our unique collection of apparels for men & women brings you the best of all.
+								With a wide variety of apparels, Sitannya Shopping Store allows you to choose your favorite dress without facing the hesitation of damaged pieces.
+								One and only Shopping Store in India, you can trust blindfolded.
+								Sitannya offers you the convenience of Online Shopping and gives you chance to browse all your heart-melted designs at www.sitannya.com</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="ftco-section bg-light" style="margin-top:30px;">
+    	<div class="container">
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big">Products</h1>
+            <h2 class="mb-4">Our Products</h2>
+          </div>
+        </div>
+    	</div>
+    	<div class="container-fluid">
+    		<div class="row">
+				{% for item in product %}
+    			<div class="col-sm col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="../products/{{item.id}}" class="img-prod"><img class="img-fluid" src="{{ item.image.url }}" alt="product images"></a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="#">{{ item.name }}</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>Rs. {{ item.price }}</span></p>
+		    					</div>
+		    					<div class="rating">
+	    							<p class="text-right">
+	    								<span class="ion-ios-star-outline"></span>
+	    								<span class="ion-ios-star-outline"></span>
+	    								<span class="ion-ios-star-outline"></span>
+	    								<span class="ion-ios-star-outline"></span>
+	    								<span class="ion-ios-star-outline"></span>
+	    							</p>
+	    						</div>
+	    					</div>
+
+    					</div>
+    				</div>
+    			</div>
+
+				{% endfor %}
+    		</div>
+    	</div>
+
+
+    </section>
+
+
+    <section class="ftco-section ftco-section-more img" style="background-image: url({% static 'images/bg_5.jpg'%});">
+    	<div class="container">
+    		<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section ftco-animate">
+          	<h2>Festive Sale</h2>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'images/bg_4.jpg'%});">
+    	<div class="container">
+    		<div class="row justify-content-center py-5">
+    			<div class="col-md-10">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="10000">0</strong>
+		                <span>Happy Customers</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="100">0</strong>
+		                <span>Branches</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="1000">0</strong>
+		                <span>Partner</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="100">0</strong>
+		                <span>Awards</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section bg-light ftco-services">
+    	<div class="container">
+    		<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h1 class="big mt-5">Sitannya</h1>
+<!--            <h2>We want you to express yourself</h2>-->
+          </div>
+        </div>
+			<p class="text-justify">
+				Sitannya is a brand born under the shadow of western culture, inspired by silhouettes.
+				We strive to connect with the people that are the pulse of urban culture to create a brand that combines the freshness of both silhouettes and fashion.
+				Our clothing is carefully curated to provide our customers with the latest trend.
+			</p>
+			<h4>What do we offer?</h4>
+			<p class="text-justify">Sitannya is the one-stop online fashion portal for all your fashion needs. Right from the runway, it brings the trendiest model collection for you, which includes Men's and Women's apparels. The Apparels are of the best quality and affordable rates. No need to panic about the payment methods, as we have the most convenient COD (Cash on Delivery) option for you. Sitannya enables you to grab your desired products within the limited time of 3-4 days from the time of order.
+
+</p>
+			<h4 style="font-size:20px;">SITANNYA @ IRW & BFW</h4>
+			<p class="text-justify">Now pick up your favourite dress that goes well with your dress.
+Sitannya made it to India Runway Week (IRW) & BFW (Bangalore Fashion Week), where we explicitly showcased our sensuous yet feminine luxury Pret line collection.
+
+</p>
+
+    	</div>
+    </section>
+
+		<section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+            	<h1 class="big">Subscribe</h1>
+              <h2>Subcribe to our Newsletter</h2>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!--end index code-->
+
+	{% endblock %}
+
